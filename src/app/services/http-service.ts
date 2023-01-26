@@ -8,9 +8,9 @@ export class HttpService {
     private readonly http: HttpClient
   ) { }
 
-  callApi(): Observable<boolean> {
+  sendMessage(message: string): Observable<boolean> {
     return this.http
-      .get<boolean>('http://localhost:5234/CodingTools');
+      .post<boolean>('http://localhost:5234/CodingTools', message);
   }
 
-  }
+}

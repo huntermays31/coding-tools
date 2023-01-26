@@ -17,8 +17,8 @@ export class AppComponent {
 
   }
 
-  callApi(): void {
-    this.httpService.callApi().pipe(
+  sendMessage(message: string): void {
+    this.httpService.sendMessage(message).pipe(
       tap(x => {
         console.log(x);
         this.updateSearchValue(x.toString());
