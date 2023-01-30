@@ -8,9 +8,13 @@ export class HttpService {
     private readonly http: HttpClient
   ) { }
 
-  sendMessage(message: string): Observable<boolean> {
+  sendMessage(message: string): Observable<string> {
     return this.http
-      .post<boolean>('http://localhost:5234/CodingTools', message);
+      .post<string>('http://localhost:5234/CodingTools', {message});
   }
 
+}
+
+export interface JiraIssue {
+  description: string
 }

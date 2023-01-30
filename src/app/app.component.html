@@ -1,2 +1,3 @@
-<span>App Component</span>
-<button (click)="sendMessage('Test')">Call Api</button>
+<app-main-page
+  (callApiButtonClicked)="sendMessage($event)">
+</app-main-page>
